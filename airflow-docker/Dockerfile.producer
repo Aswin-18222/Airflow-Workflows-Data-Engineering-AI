@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY scripts/News_ingestion_Kafka.py .
+
+RUN pip install kafka-python requests
+
+CMD ["python", "News_ingestion_Kafka.py"]
